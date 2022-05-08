@@ -1,6 +1,6 @@
 <template>
-  <div fluid class="background" style="display:table">
-      <AppNavigatorVue />
+  <div fluid class="background" style="position: relative">
+      <AppNavigatorVue :invert="false"></AppNavigatorVue>
       <div class="text-box"> 
         <h1 class="header1">
             远大再生资源
@@ -35,8 +35,8 @@ export default {
 .background {
   background: url("../../assets/background/0-1.png");
   background-size: cover;
-  width: 100%;
-  height: calc(100vw * 2160 / 3840);
+  width: 100vw;
+  height: 100vh;
 }
 .text-box {
   display: table-cell; 

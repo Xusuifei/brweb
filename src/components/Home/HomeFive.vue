@@ -1,5 +1,6 @@
 <template>
   <div fluid id="homepage5bg">
+            <AppNavigatorVue :invert="false"></AppNavigatorVue>
       <div class="text-box"> 
         <h1>
             加入我们，未来可期
@@ -51,8 +52,8 @@ export default {
 #homepage5bg{
         background-image: url("../../assets/background/0-5.png");
         background-size: cover;
-        width: inherit;
-        height: calc(100vw * 2160 / 3840);
+        width: 100vw;
+        height: 100vh;
 }
 .text-box {
   display: table-cell; 

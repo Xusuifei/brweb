@@ -1,18 +1,20 @@
 <template>
   <div class="navbar">
-    <div style = "display: inline-flex;">
+    <div style = "display: inline-flex; position:absolute">
       <div style="min-width: 64px; vertical-align: middle; margin-left: 7vw; width: 16vw; margin-right: 10vw;">
         <img id="logo1" src="../assets/logo_2x.png"
           sizes="max(9vw, 129px)"
-          alt="logo" style="object-fit:scale-down; width:100%; height: auto; z-index: 900">
+          alt="logo" style="object-fit:scale-down; width:100%; height: auto; z-index: 900"
+          :style="{filter:(this.invert ?'invert(100)':'invert(0)')}"
+          >
       </div>
       <div style="min-width: 600px; width: 45vw">
         <el-menu :default-active="activeIndex"
           class="el-menu-headnav"
+          :style="{color:(this.invert ?'#000000':'#ffffff')}"
           mode="horizontal" 
-          @select="handleSelect"
-          router="true">
-          >
+          :router="true" 
+          @select="handleSelect">
           <el-submenu index="1">
             <template slot="title">关于我们</template>
             <el-menu-item class="el-menu-headnav" index="about">概述</el-menu-item>
@@ -39,7 +41,7 @@
             <el-menu-item class="el-menu-headnav" index="2-1">人才理念</el-menu-item>
             <el-menu-item class="el-menu-headnav" index="2-2">招聘岗位</el-menu-item>
           </el-submenu>            
-          <el-menu-item id="last_nav" index="5"><a href="https://www.ele.me" target="_blank" style="width:76px">联系我们</a></el-menu-item>
+          <el-menu-item id="last_nav" index="5"><a href="" target="_blank" style="width:76px">联系我们</a></el-menu-item>
         </el-menu>
         <div class="line"></div>
       </div>
@@ -47,19 +49,19 @@
   </div>
 </template>
 
-
-
 <script>
    export default {
     name: "AppNavigator",
     props: {
-        props: {
-          invent: Boolean
-        }
+          invert: { 
+            type: Boolean,
+            default: true,
+          }
     },
+
     data() {
       return {
-        activeIndex: '1'
+        activeIndex: '1',
       };
     },
     methods: {
@@ -84,7 +86,6 @@
 }
 .el-menu-headnav {
   font-family: "Microsoft YaHei", "Arial", sans-serif;
-  color: #ffffff;
 }
 .el-menu-item{
   min-width: 76px;

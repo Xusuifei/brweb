@@ -1,14 +1,16 @@
 <template>
-  <div fluid class="background02" style="display:table" id="homepage2bg">
+  <div fluid class="background02" style="position: relative" id="homepage2bg">
+        <AppNavigatorVue :invert="true"></AppNavigatorVue>
         <div class="product-image-container">
             <el-image
-            style="width: 14vw; padding-top:50%; padding-left: 23vw"
                 class="el-image"
+                style="height: 75vh;"
                 :src="bigimgurl"
+                :fit="fit"
                 ></el-image>
         </div>
-        <div style= "font-family= 'Microsoft Yahei Light'; margin-top: 17vw; margin-left: 49.2vw">
-            <h1 style="margin-bottom: 2vw"><span>主营产品</span></h1>
+        <div style="font-family: 'Microsoft Yahei Light'; margin-left: 49.8vw;">
+            <h1 style="margin-bottom: 2vw; padding-top: 20vh"><span>主营产品</span></h1>
             <h2 style="margin-bottom: 2vw">{{pointedproduct}}</h2>
             <p style="margin-bottom: 5vw"><a class="btn bg-white" onclick="" href="" target=_self> 
                 <span>
@@ -27,11 +29,12 @@
                 @mouseover="imgmouseover(i)"
                 @mouseleave="imgmouseout(i)"
               >
-                <img style="height: 80%; width: 28%
-                    width: auto; 
+                <img style="
+                    height: auto; 
+                    width: 28%; 
                     margin-left:3.5vw; 
                     margin-top: 5px" 
-                    :src="item" :alt="product[i].name" @click="exhibitionimg($event, i)" />
+                    :src="item" :alt="item.name" />
                     <div style="text-align: center; font-size: 0.5rem; margin-top: -1vw; margin-left: -0.5vw">{{product[i].name}}</div>
                 <div
                   :class="[i == mask ? '' : 'mask']"
@@ -44,8 +47,16 @@
 </template>
 
 <script>
+import AppNavigatorVue from '@/components/AppNavigator.vue';
+
 export default {
     name: "home-two",
+    components: {
+        AppNavigatorVue
+    },
+    setup() {
+        AppNavigatorVue
+    },
     data() {
         return {
             bigimgurl: require("@/assets/img/b75sn.png"), //大图的url属性url: b150snbig,
@@ -72,7 +83,8 @@ export default {
         mask: 0,
         clickmask: 0,
         pointedproduct: "B75SN —— 润滑油基础油",
-        producturl: "/product#B75SN"
+        producturl: "/product#B75SN",
+        fit: "contain",
         }
     },
     
@@ -82,6 +94,7 @@ export default {
     destroyed() {
         window.removeEventListener("scroll", this.handleScroll);
     }, 
+    
     methods: {
         handleScroll() {
             console.log(window.scrollY);
@@ -99,31 +112,26 @@ export default {
 
         }, 
 
-    exhibitionimg(event, i) {
-//为大图赋值当前点击的图片url地址
-      this.bigimgurl = event.target.src
-//为当前点击的mask重新赋值
-      this.clickmask = i
-    },
-
         //鼠标移入事件
-imgmouseover(i) {
-//将mask置为i，div使用v-show判定来显示与隐藏，
+    imgmouseover(i) {
+    //将mask置为i，div使用v-show判定来显示与隐藏，
       this.mask = i;
       //this.style.backgroundColor = "white";
       let elem2 = document.getElementsByClassName("image-li");
       elem2[i].style.backgroundColor = "#F9BE00";
       this.pointedproduct = this.product[i].desc;
+      //为大图赋值当前点击的图片url地址
+      this.bigimgurl = this.url[i];
+      //为当前点击的mask重新赋值
+      this.clickmask = i
     },
-//鼠标移出事件，
+    //鼠标移出事件，
     imgmouseout(i) {
-//赋值最后点击的mask值
+    //赋值最后点击的mask值
       this.mask = this.clickmask;
       //this.style.backgroundColor = "white";
-            console.log("mouse is out:" + i);
       let elem2 = document.getElementsByClassName("image-li");
-      console.log(elem2[i]);
-            elem2[i].style.backgroundColor = "transparent";
+      elem2[i].style.backgroundColor = "transparent";
     },
     },
 }
@@ -131,14 +139,17 @@ imgmouseover(i) {
 
 <style scoped>
 .background02{
-    width: 100%;
-    aspect-ratio: 16/9;
+    width: 100vw;
     background: linear-gradient(to right, #f6f6f6 60%, #ffffff 60%);
 }
 .product-image-container{
     position: relative;
     float: left;
-    overflow: auto;
+    overflow: hidden;
+    left: 30%;
+    top: 20%;
+    height: 78vh;
+    width: auto;
 }
 .image-ul /deep/ {
     display: flex;
@@ -146,6 +157,6 @@ imgmouseover(i) {
 }
 
 .image-ul.image-ul:hover /deep/ {
-    background-color: white;
+    background-color: transparent;
 };
 </style>

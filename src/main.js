@@ -5,6 +5,11 @@ import store from './store';
 //import i18n from './i18n/';
 import Element from 'element-ui';
 import './assets/css/element-variables.scss'
+import './assets/css/global-def.scss'
+
+import 'animate.css'
+import 'fullpage.js/vendors/scrolloverflow';
+import VueFullpage from 'vue-fullpage.js';
 
 
 //import enLocale from 'element-ui/lib/locale/lang/en';
@@ -12,6 +17,7 @@ import './assets/css/element-variables.scss'
 
 Vue.use(Element);
 
+Vue.use(VueFullpage)
 //Vue.config.lang = 'zh-cn'
 //Vue.locale('zh-cn', zhLocale)
 //Vue.locale('en', enLocale)

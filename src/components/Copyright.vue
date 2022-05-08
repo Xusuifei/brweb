@@ -1,6 +1,6 @@
 <template>
   <div style="position: fixed; " id="CopyrightBanner">
-    Copyright© <a url="www.broad.com">远大科技集团</a>      湘ICP备09010211号-1          电　话：0730-3060688
+    Copyright© <a url="www.broad.com">远大科技集团</a>      湘ICP备09010211号-1          电　话：0730-3070688
   </div>
 </template>
 
@@ -24,6 +24,8 @@
 
 <style scoped>
 #copyrightbanner{
+  position: absolute;
+  bottom: 25px;
   width: 100vw;
   height: 142px;
   font-family: Microsoft Yahei, Arial, Helvetica, sans-serif;

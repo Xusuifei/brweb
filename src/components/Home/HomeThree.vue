@@ -1,5 +1,6 @@
 <template>
-  <div fluid id="homepage3bg" :style="{backgroundImage: 'url(' + bgsrc + ')', backgroundSize:'cover'}">
+  <div fluid id="homepage3bg" :style="{backgroundImage: 'url(' + bgsrc + ')', backgroundSize:'cover', transitionDelay: '1s'}">
+      <AppNavigatorVue :invert="false"></AppNavigatorVue>
     <div style="
         min-width: 300px;
         width: 21vw;
@@ -11,14 +12,13 @@
         <div style="color: white;
                     display: block;
                     width: inherit;
-                    padding-top: calc( 100vw * 660/ 3840 );">
+                    padding-top: calc( 25vh );">
             <div 
                 :class="showDetail == i? 'details_li' : 'details_tp'"
                 v-for="(item, i) in detaillist"
-                v-bind:id="item.id"
                 :key="i"
-                @mouseover="showfull($event,item.id,i)"
-                @mouseout="hiddenfull($event,item.id)"
+                @mouseover="showfull($event,i)"
+                @mouseout="hiddenfull()"
               >
                 <div style="height: 2vw; display: block" v-show="showDetail != i"></div>
                 <div style="display: inline-block; 
@@ -81,18 +81,14 @@ export default {
     },
 
     methods: {
-        showfull($event, id, i){
+        showfull($event, i){
             this.showDetail = i; //swith position and display full description
             // change background picture
             this.bgsrc = this.bg03list[i];
             // change block background
-            document.getElementById(id).backgroundColor = "transparent"
-            console.log("setup up:"+ id + "to" + document.getElementById(id).backgroundColor)
         },
-        hiddenfull($event, id){
+        hiddenfull(){
             this.showDetail = 9; //swith position and display full description
-            //document.getElementById(id).background="transparent";
-            console.log(document.getElementById(id).backgroundColor);
         },        
     },
 }
@@ -100,8 +96,9 @@ export default {
 
 <style scoped>
 #homepage3bg{
-        width: 100%;
-        height: calc(100vw * 2160 / 3840);
+        width: 100vw;
+        height: 100vh;
+transition-delay: 1.5s;
 }
 .details_li {
     display: block;
