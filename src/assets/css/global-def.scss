@@ -1,0 +1,20 @@
+/* 定制的可以公用的scss组件 */
+//pageframe class define whole page slides. background will be defined in each files.
+.pageframe {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.screenwithbg {
+  position: relative;
+  background-size: cover;
+}
+.screennobg {
+  position: relative;
+}
+
+a:visited{
+  text-decoration: none;
+}
