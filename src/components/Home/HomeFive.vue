@@ -1,6 +1,6 @@
 <template>
   <div fluid id="homepage5bg">
-            <AppNavigatorVue :invert="false"></AppNavigatorVue>
+    <AppNavigatorVue :invert="false"></AppNavigatorVue>
       <div class="text-box"> 
         <h1>
             加入我们，未来可期

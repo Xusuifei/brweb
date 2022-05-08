@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+//import AboutView from '../views/AboutView/AboutView.vue'
 
 Vue.use(VueRouter)
 
@@ -17,39 +18,33 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView/AboutView.vue'),
-    children: [
-      {
-        name: 'overview',
-        path: 'overview',
-        component: () => import(/* webpackChunkName: "about" */ '../views/AboutView/AboutView.vue')
-      },
-      {
-        name: 'certificates',
-        path: 'certs',
-        component: () => import(/* webpackChunkName: "about" */ '../views/AboutView/AboutCerts.vue')
-      },
-      {
-        name: 'history',
-        path: 'history',
-        component: () => import(/* webpackChunkName: "about" */ '../views/AboutView/AboutHistory.vue')
-      },
-      {
-        name: 'culture',
-        path: 'culture',
-        component: () => import(/* webpackChunkName: "about" */ '../views/AboutView/AboutCulture.vue')
-      },
-      {
-        name: 'team',
-        path: 'team',
-        component: () => import(/* webpackChunkName: "about" */ '../views/AboutView/AboutTeam.vue')
-      },
-      {
-        name: 'video',
-        path: 'video',
-        component: () => import(/* webpackChunkName: "about" */ '../views/AboutView/AboutVideo.vue')
-      },
-    ]
   },
+  {
+    name: 'certificates',
+    path: '/about/certs',
+    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView/AboutCerts.vue')
+  },
+    {
+      name: 'history',
+      path: 'history',
+      component: () => import(/* webpackChunkName: "about" */ '../views/AboutView/AboutHistory.vue')
+    },
+    {
+      name: 'culture',
+      path: 'culture',
+      component: () => import(/* webpackChunkName: "about" */ '../views/AboutView/AboutCulture.vue')
+    },
+    {
+      name: 'team',
+      path: 'team',
+      component: () => import(/* webpackChunkName: "about" */ '../views/AboutView/AboutTeam.vue')
+    },
+    {
+      name: 'video',
+      path: 'video',
+      component: () => import(/* webpackChunkName: "about" */ '../views/AboutView/AboutVideo.vue')
+    },
+
   {
     path: '/product',
     name: 'product',

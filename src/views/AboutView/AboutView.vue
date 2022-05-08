@@ -105,7 +105,7 @@ export default {
       p5bgsrc: require("@/assets/background/1-1-5-1.png"),
 
       options: {
-        licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
+        licenseKey: "gplv3-license",
       },
 
       p4data: [{
