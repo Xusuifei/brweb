@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-//import AboutView from '../views/AboutView/AboutView.vue'
 
 Vue.use(VueRouter)
 
@@ -26,22 +25,22 @@ const routes = [
   },
     {
       name: 'history',
-      path: 'history',
+      path: '/about/history',
       component: () => import(/* webpackChunkName: "about" */ '../views/AboutView/AboutHistory.vue')
     },
     {
       name: 'culture',
-      path: 'culture',
+      path: '/about/culture',
       component: () => import(/* webpackChunkName: "about" */ '../views/AboutView/AboutCulture.vue')
     },
     {
       name: 'team',
-      path: 'team',
+      path: '/about/team',
       component: () => import(/* webpackChunkName: "about" */ '../views/AboutView/AboutTeam.vue')
     },
     {
       name: 'video',
-      path: 'video',
+      path: '/about/video',
       component: () => import(/* webpackChunkName: "about" */ '../views/AboutView/AboutVideo.vue')
     },
 
@@ -52,18 +51,16 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/ProductView/ProductView.vue'),
-    children: [
-      {
-        name: 'recycle',
-        path: '/recycle',
-        component: () => import(/* webpackChunkName: "about" */ '../views/ProductView/ProductRecycle.vue')
-      },
-      {
-        name: 'case',
-        path: 'case',
-        component: () => import(/* webpackChunkName: "about" */ '../views/ProductView/ProdUseCase.vue')
-      },
-    ]
+  },
+  {
+    name: 'recycle',
+    path: '/product/recycle',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ProductView/ProductRecycle.vue')
+  },
+  {
+    name: 'case',
+    path: '/product/case',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ProductView/ProdUseCase.vue')
   },
   {
     path: '/news',

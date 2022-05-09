@@ -24,4 +24,8 @@
   <polygon points="7.3,10.9 2.9,6.7 28,6.7 28,5.3 2.9,5.3 7.3,1.1 6.4,0.1 0,6 6.4,11.9">
   </polygon>
 </symbol>
+<symbol viewBox="0 0 28 12" id="s-diamond">
+  <path fill-rule="evenodd"  fill="rgb(249, 190, 0)"
+  d="M40.198,20.563 L20.200,40.578 L0.201,20.563 L20.200,0.548 L40.198,20.563 Z"/>
+</symbol>
 </svg>

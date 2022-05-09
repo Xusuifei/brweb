@@ -17,18 +17,18 @@
           @select="handleSelect">
           <el-submenu index="1">
             <template slot="title">关于我们</template>
-            <el-menu-item class="el-menu-headnav" index="about">概述</el-menu-item>
-            <el-menu-item class="el-menu-headnav" index="1-2">荣誉资质</el-menu-item>
-            <el-menu-item class="el-menu-headnav" index="1-3">沿革</el-menu-item>
-            <el-menu-item class="el-menu-headnav" index="1-4">企业文化</el-menu-item>
-            <el-menu-item class="el-menu-headnav" index="1-5">团队风采</el-menu-item>
-            <el-menu-item class="el-menu-headnav" index="1-6">视频集锦</el-menu-item>
+            <el-menu-item class="el-menu-headnav" :style="{color:(this.invert ?'#000000':'#ffffff')}" index="about">概述</el-menu-item>
+            <el-menu-item class="el-menu-headnav" :style="{color:(this.invert ?'#000000':'#ffffff')}" index="1-2">荣誉资质</el-menu-item>
+            <el-menu-item class="el-menu-headnav" :style="{color:(this.invert ?'#000000':'#ffffff')}" index="1-3">沿革</el-menu-item>
+            <el-menu-item class="el-menu-headnav" :style="{color:(this.invert ?'#000000':'#ffffff')}" index="1-4">企业文化</el-menu-item>
+            <el-menu-item class="el-menu-headnav" :style="{color:(this.invert ?'#000000':'#ffffff')}" index="1-5">团队风采</el-menu-item>
+            <el-menu-item class="el-menu-headnav" :style="{color:(this.invert ?'#000000':'#ffffff')}" index="1-6">视频集锦</el-menu-item>
           </el-submenu>
           <el-submenu index="2">
             <template slot="title">产品中心</template>
-            <el-menu-item class="el-menu-headnav" index="2-1">产品</el-menu-item>
-            <el-menu-item class="el-menu-headnav" index="2-2">原料回收</el-menu-item>
-            <el-menu-item class="el-menu-headnav" index="2-3">案例</el-menu-item>
+            <el-menu-item class="el-menu-headnav" :style="{color:(this.invert ?'#000000':'#ffffff')}" index="2-1">产品</el-menu-item>
+            <el-menu-item class="el-menu-headnav" :style="{color:(this.invert ?'#000000':'#ffffff')}" index="2-2">原料回收</el-menu-item>
+            <el-menu-item class="el-menu-headnav" :style="{color:(this.invert ?'#000000':'#ffffff')}" index="2-3">案例</el-menu-item>
           </el-submenu>
     <!--      <el-submenu index="3">
             <template slot="title">新闻中心</template>
@@ -38,8 +38,8 @@
           <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">新闻中心</a></el-menu-item>
           <el-submenu index="4">
             <template slot="title">诚聘英才</template>
-            <el-menu-item class="el-menu-headnav" index="2-1">人才理念</el-menu-item>
-            <el-menu-item class="el-menu-headnav" index="2-2">招聘岗位</el-menu-item>
+            <el-menu-item class="el-menu-headnav" :style="{color:(this.invert ?'#000000':'#ffffff')}" index="2-1">人才理念</el-menu-item>
+            <el-menu-item class="el-menu-headnav" :style="{color:(this.invert ?'#000000':'#ffffff')}" index="2-2">招聘岗位</el-menu-item>
           </el-submenu>            
           <el-menu-item id="last_nav" index="5"><a href="" target="_blank" style="width:76px">联系我们</a></el-menu-item>
         </el-menu>
