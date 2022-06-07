@@ -1,0 +1,60 @@
+/* 定制的可以公用的scss组件 */
+/* pageframe class define whole page slides. background will be defined in each files. */
+*{
+  font-family: "Microsoft YaHei","微软雅黑", Helvetica, sans-serif;
+  font-weight: 300;
+  transition: all 0.1s ease;
+}
+.pageframe {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.section {
+  position: relative;
+  background-size: cover;
+}
+/*.screennobg {
+  position: relative;
+} */
+a {
+  text-decoration: none;
+}
+a:link{ text-decoration:none; } 
+a:visited{ text-decoration:none; } 
+a:hover{ text-decoration:none; } 
+a:active{ text-decoration:none; }
+a:-webkit-any-link:active {
+  color: unset;
+}
+a:-webkit-any-link {
+  color: unset;
+  cursor: pointer;
+}
+/* frame-boxes to avoid cover navbar */
+.iframe-box {
+  width: 85vw;
+  height: 76vh;
+  position: relative;
+  top: 23vh;
+  left: 10vw;
+}
+.active-button {
+  background-color: #F9BE00;
+  color: #fff;
+}
+.inactive-button {
+  color: #F9BE00;
+  background-color: rgba(255,255,255,0.8);
+}
+h1 span::after{
+  content: '';
+  width: 0.2em;
+  height: 0.2em;
+  border: 2px solid #FCB814;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: text-top;
+  margin-left: 0.3em;
+}

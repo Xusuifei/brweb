@@ -1,0 +1,43 @@
+/* 改变主题色变量 */
+$--color-primary: #F9BE00;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import '~element-ui/packages/theme-chalk/src/base.scss';
+@import '~element-ui/packages/theme-chalk/src/icon.scss';
+@import '~element-ui/packages/theme-chalk/src/button.scss';
+@import '~element-ui/packages/theme-chalk/src/image.scss';
+@import '~element-ui/packages/theme-chalk/src/radio.scss';
+@import '~element-ui/packages/theme-chalk/src/radio-group.scss';
+@import '~element-ui/packages/theme-chalk/src/radio-button.scss';
+@import '~element-ui/packages/theme-chalk/src/carousel.scss';
+@import '~element-ui/packages/theme-chalk/src/carousel-item.scss';
+
+@import './element-btn.scss';
+@import './element-elmenu.scss';
+
+.el-carousel__indicators--horizontal {
+  position: absolute;
+  left: auto;
+  right: 48vw;
+  bottom: 2vh;
+  text-align: right;
+
+  .el-carousel__indicator--horizontal button {
+      width: 8px;
+      height: 8px;
+      background: #CCCCCC;
+      border-radius: 50%;
+      opacity: 0.5;
+      margin-left: 2vw;
+  }
+
+  .el-carousel__indicator--horizontal.is-active button {
+      width: 8px;
+      height: 8px;
+      background: #FCB814;
+      border-radius: 50%;
+      opacity: 0.5;
+  }
+}
