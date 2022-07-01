@@ -193,8 +193,8 @@ export default {
 }
 .produc-p2-float-img-hero{
   position: absolute;
-  left: 2px;
-  bottom: 2px;
+  left: 0px;
+  bottom: 5px;
   height: 2rem;
   width: 5rem;
   background: rgba(0,0,0,0.5);

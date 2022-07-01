@@ -23,7 +23,7 @@
             <p>仍有疑问？<br>欢迎您与我们联系！</p>
           </div>
           <div class="contact-p2-rightbox">
-             <div style="height: 9vh; padding-top: 9vh; border-bottom: 1px solid #555555"></div>
+             <div style="height: 9vh; padding-top: 7vh; border-bottom: 1px solid #555555"></div>
             <div class="contact-p2-table">
               <h3>{{p3righthead}}</h3>
               <p>{{p3righttext}}</p>
@@ -96,6 +96,7 @@ methods: {
 <style scoped>
 .contact-p1-text-box {
   display: table-cell; 
+  color: #000;
   padding-left: 11vw;
   padding-top: 29vh;
   width: 25vw;
@@ -103,13 +104,11 @@ methods: {
 }
 .contact-p1-text-box h1 {
     font-size: max(3.65vw, 30px);
-    color: #fff;
     font-weight: bold;
     letter-spacing: 0.6vw;
 }
 .contact-p1-text-box h2 {
     font-size: max(1.87vw, 18px);
-    color: #fff;
     letter-spacing: 0.2vw;
     line-height: 1.5;
 }
@@ -122,8 +121,9 @@ methods: {
    display: block;
    position: relative;
    top:11.85vh;
-   height: 58.15vh;
+   height: 50vh;
    width: 100vw;
+   background: linear-gradient(to top, white 50%, transparent 50%)
  }
  .contact-p2-leftbox {
     display: table-cell;
@@ -134,6 +134,7 @@ methods: {
 }
 .contact-p2-leftbox h1{
   font-size: max(2.6vw, 37px);
+  margin-bottom: 2vh;
 }
 .contact-p2-leftbox p{
   text-align: left;

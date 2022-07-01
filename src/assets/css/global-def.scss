@@ -27,10 +27,12 @@ a:hover{ text-decoration:none; }
 a:active{ text-decoration:none; }
 a:-webkit-any-link:active {
   color: unset;
+  text-decoration: none;
 }
 a:-webkit-any-link {
   color: unset;
   cursor: pointer;
+  text-decoration: none;
 }
 /* frame-boxes to avoid cover navbar */
 .iframe-box {

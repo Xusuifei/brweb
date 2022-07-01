@@ -34,7 +34,7 @@
       <!-- 第三屏 -->
       <div fluid class="section screennobg">
         <AppNavigator :invert="true"></AppNavigator>
-        <div class="iframe-box">
+        <div class="iframe-box" style="left: 7vw;">
           <el-carousel height="70vh" :interval="8000" indicator-position="outside">
             <el-carousel-item v-for="item in p3details" :key="item.name">
               <div class="prodov-p3-left-frame"> 
@@ -70,6 +70,7 @@
                   </div>
                 </div>
               </div>
+              <div style="margin-top: 8vh; text-align: right;">*报告是指在行业标准范围内可进行调整的参数，根据客户及生产要求来调整</div>
               </div>
             </el-carousel-item>
           </el-carousel>
@@ -82,10 +83,9 @@
             <h1>
                 <span>产品值得信赖</span>
             </h1>
-            <p>
-                公司润滑油再生基础油75SN、150SN、350SN等产品享誉行业，其粘度指数、色度远高于行业标准（《再生润滑油基础油》2018年4月8日颁布，并在标准范围内，可按客户特定的工艺参数提供产品，值得信赖！
-            </p>
+            <p>经过中国中国石油昆仑润滑检测中心成都实验室检测，远大（湖南）再生燃油股份有限公司产品润滑油基础油150SN的所有指标全部合格，是行业标杆产品。</p>
           </div>
+          <div class="prodov-p4-img"><img style="width: 100%" src="@/assets/img/2-1-4.jpg" /></div>
           <Copyright  />
       </div>
       <!-- 第四屏结束-->
@@ -259,11 +259,6 @@ export default {
     font-size: max(2.6vw, 37px);
     color: #ffffff;
 }
-.prodov-p4-text-box p {
-    font-size: max(1.04vw, 15px);
-    color: #ffffff;
-    line-height: 2;
-}
 .imageslider {
   margin-left: 10vw;
   width: 11vw;
@@ -424,20 +419,29 @@ export default {
   height: 50vh;
 }
 .prodov-p4-text-box{
-  display: table-cell; 
+  display: inline-block; 
   padding-left: 10.5vw;
   padding-top: 31.6vh;
-  width: 33vw;
-  height: 30vh;
+  width: 26.8vw;
+  height: 50vh;
+  vertical-align: top;
 }
 .prodov-p4-text-box h1{
   font-size: max(2.6vw, 25px);
   margin-bottom: 5vh;
   color:#fff;
 }
-.prodov-p4-text-box h1{
-  font-size: max(2.6vw, 25px);
-  line-height: 1.5;
+.prodov-p4-text-box p {
+    font-size: max(1.04vw, 15px);
+    color: #ffffff;
+    line-height: 2;
+    text-align: justify;
+}
+.prodov-p4-img{
+  display: inline-block;
+  width: min(25.7vw, 45.5vh);
+  margin-left: 22.2vw;
+  margin-top: 20vh;
 }
 </style>
 

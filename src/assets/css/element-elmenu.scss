@@ -28,7 +28,7 @@
   &:hover,
   &:focus {
     outline: none;
-    background-color: rgba(100,100,100,0.4);
+    background-color: rgba(100,100,100,0.1);
   }
 
   @include when(disabled) {
@@ -65,7 +65,7 @@
 
       &:not(.is-disabled):hover,
       &:not(.is-disabled):focus{
-        background-color: rgba(100,100,100,0.4);
+        background-color: rgba(100,100,100,0.1);
       }
     }
     & > .el-submenu {

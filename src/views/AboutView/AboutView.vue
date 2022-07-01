@@ -20,7 +20,7 @@
         <div class="abtov-p2-iframe-box"> 
           <div class="abtov-p2-text-box">
             <h1>
-                <span>远大再生油资源公司</span>
+                <span>远大再生资源公司</span>
             </h1>
             <p>
                 远大科技集团有限公司是1988年以3万元起家的中国民营企业，创业以来开发了上百种高科技产品，从未模仿过同行业技术。远大使命是“为了人类未来：用原始创新的节能、耐久科技，保护地球家园。用原始创新的洁净、安全科技，保护人类生命”。远大总部设于长沙，产品覆盖80多国，
@@ -32,22 +32,38 @@
             <div class="ShownImage">
               <img style="width: inherit;" src="@/assets/img/1-2-1.jpg">
             </div>
+            <div style="display:inline-block; width: 20vw;">
+              <router-link to="/about/team"> <img src="@/assets/icons/team@2x.png"><span>团队风采</span></router-link>
+              <router-link to="/about/video#video1"> <img src="@/assets/icons/video@2x.png"><span>远大资源简介</span></router-link>
+              <router-link to="/about/video#video2"> <img src="@/assets/icons/video@2x.png"><span>你鼓舞了我</span></router-link>
+            </div>
           </div>
-        </div>
-        <div style="display:inline-block; width: 20vw; vertical-align: text-bottom; padding-bottom: 3vh">
-          <router-link to="/about/team"> <img src="@/assets/icons/team@2x.png"><span>团队风采</span></router-link>
-          <router-link to="/about/video#video1"> <img src="@/assets/icons/video@2x.png"><span>远大资源简介</span></router-link>
-          <router-link to="/about/video#video2"> <img src="@/assets/icons/video@2x.png"><span>你鼓舞了我</span></router-link>
+          <div style="position:absolute; top: 20%; left: 70%; width: 1px; background-color: #F9BE00; height:80vh"></div>
         </div>
       </div>
       <!-- 第三屏 -->    
       <div fluid class="section screennobg">
         <AppNavigator :invert="true"></AppNavigator>
+        <div class="cursor">
+          <div id="abtov-p3-cursor">
+            <div class="cursor__container">
+              <div class="cursor__circle">
+                <img src="@/assets/icons/icons-arrow-left.svg" width="25%" height="25%" alt="" class="cursor__arrow" />
+                <img src="@/assets/icons/icons-arrow-right.svg" width="15%" height="25%" alt="" class="cursor__arrow" />
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="abtov-p3-iframe-box"> 
           <h1><span>远大资源风景一览</span></h1>
-          <div class="abtov-p3-image-container" >
+          <div id="abtov-p3-image-container"  
+            @mouseenter="showcycle($event)"
+            @mouseleave="hidecycle()" 
+            @mousemove="imagecycle($event)"
+            @mousedown="bigcircle()"
+            @mouseup="normalcircle()"> 
             <slider ref="slider" :options="slideroptions">
-              <slideritem class="abtov-p3-image" v-for="item in p3data" :key="item.title">
+              <slideritem class="abtov-p3-image" v-for="(item, i) in p3data" :key="i">
               <div>
                 <img :src="item.img" />
                 <p class="abtov-p3-float-img-hero">{{item.title}}</p>
@@ -99,7 +115,7 @@
           <span :class="p5showDetail == 0? 'active-button' : 'inactive-button'" @mouseover="p5showdetail(0)">使命</span>
           <span :class="p5showDetail == 1? 'active-button' : 'inactive-button'" @mouseover="p5showdetail(1)">价值</span>
         </div>
-        <copyright-vue />
+        <copyright-vue :invert="true" />
       </div>
     </full-page>
   </div>
@@ -179,7 +195,48 @@ export default {
 
     p5showdetail(i) {
         this.p5showDetail = i;
+        if (i == 1){
+          this.p5bgsrc = require("@/assets/background/0-3-4.jpg");
+        } else {
+          this.p5bgsrc = require("@/assets/background/0-3-3.jpg");
+        }
+
     },
+
+    imagecycle(event) {
+        let ele = document.getElementById("abtov-p3-cursor");
+        ele.style.willChange = "transform";
+        ele.style.transform = "translate3d("+ event.clientX+'px, ' + event.clientY+'px, '+"0px) scale3d(1, 1, 1)"
+    },
+
+    showcycle(event){
+      let ele = document.getElementById("abtov-p3-cursor");
+      ele.style.visibility = "visible";
+      ele.style.transform = "translate3d("+ event.clientX+'px, ' + event.clientY+'px, '+"0px) scale3d(1, 1, 1)"
+    },
+
+    hidecycle(){
+      let ele = document.getElementById("abtov-p3-cursor");
+      ele.style.visibility = "hidden";
+    },
+
+    bigcircle() {
+      let ele = document.getElementById("abtov-p3-cursor");
+      let circle = ele.getElementsByClassName("cursor__circle");
+      if (circle.length == 1) {
+        circle[0].style.width = "75px";
+        circle[0].style.height = "75px";
+      }
+    },
+
+    normalcircle(){
+      let ele = document.getElementById("abtov-p3-cursor");
+      let circle = ele.getElementsByClassName("cursor__circle");
+      if (circle.length == 1) {
+        circle[0].style.width = "50px";
+        circle[0].style.height = "50px";
+      }
+    }
   }
 }
 </script>
@@ -228,9 +285,8 @@ a>span{
   display: inline-block; 
   margin-left: 11vw;
   margin-top: 20vh;
-  width: 62vw;
+  width: 82vw;
   height: 80vh;
-  border-right: 1px solid #F9BE00;
   overflow: hidden;
 }
 .ShownImage {
@@ -266,12 +322,91 @@ a>span{
 .abtov-p3-iframe-box h1 {
   font-size: max(2.6vw, 37px);
 }
-.abtov-p3-image-container {
+#abtov-p3-image-container {
   margin-top: 3vh;
   height: 60vh;
   width: 90vw; 
   float: left; 
   position: relative;
+  cursor: grabbing;
+}
+.cursor{
+	position:absolute;
+  pointer-events: none;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	z-index:99999;
+	display:block;
+	-webkit-box-pack:center;
+	-webkit-justify-content:center;
+	-ms-flex-pack:center;
+	justify-content:center;
+	-webkit-box-align:center;
+	-webkit-align-items:center;
+	-ms-flex-align:center;
+	align-items:center
+}
+#abtov-p3-cursor{
+	position:relative;
+	width:0;
+	height:0;
+  visibility: hidden;
+  will-change: transform; 
+}
+.cursor__arrow {
+  margin-left: 4px;
+  margin-right: 4px;
+  
+}
+.cursor__container{
+	position:absolute;
+	left:-100px;
+	top:-100px;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	width:200px;
+	height:200px;
+	-webkit-box-pack:center;
+	-webkit-justify-content:center;
+	-ms-flex-pack:center;
+	justify-content:center;
+	-webkit-box-align:center;
+	-webkit-align-items:center;
+	-ms-flex-align:center;
+	align-items:center
+}
+
+.cursor__circle{
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+  color:#fff;
+	display:flex;
+	overflow:hidden;
+	width:50px;
+	height:50px;
+	-webkit-box-pack:center;
+	-webkit-justify-content:center;
+	-ms-flex-pack:center;
+	justify-content:center;
+	-webkit-box-align:center;
+	-webkit-align-items:center;
+	-ms-flex-align:center;
+	align-items:center;
+	grid-auto-columns:1fr;
+	-ms-grid-columns:1fr;
+	grid-template-columns:1fr;
+	-ms-grid-rows:auto;
+	grid-template-rows:auto;
+  border-radius:50%;
+	background-color:#1c1c1c;
+	opacity:1;
+	-webkit-transition:opacity .3s ease-in-out,height .4s cubic-bezier(.339, -.18, .228, 1.656),width .4s cubic-bezier(.339, -.18, .228, 1.656);
+	transition:opacity .3s ease-in-out,height .4s cubic-bezier(.339, -.18, .228, 1.656),width .4s cubic-bezier(.339, -.18, .228, 1.656)
 }
 .abtov-p4-image-container {
   margin-top: 3vh;
@@ -289,7 +424,7 @@ a>span{
   text-indent: 1.5em;
 }
 .abtov-p3-image {
-  width: 52%;
+  width: calc(min(93.11vh, 46vw) + 5vw);
   justify-content: unset;
 }
 .abtov-p3-image img{
@@ -348,26 +483,25 @@ a>span{
 .p4li-icon {
   width: 100%;
   margin-top: 3vh;
-  margin-bottom: 5vh;
+  margin-bottom: 7vh;
   color: #F9BE00;
 }
 .abtov-p5-text-box {
     height: 50vh;
     width: 50vw;
     position: relative;
-    top: 24vh;
+    top: 18vh;
     left: 10vw;
 }
 .abtov-p5-text-box h1 {
   margin-bottom: 4.5vh;
-  width: 12vw;
   height: 4.8vh;
   font-size: max(2.6vw, 37px);
   color: #000;
   line-height: 4vh;
 }
 .abtov-p5-text-box p {
-  width: 22vw;
+  width: 50vw;
   height: 12vh;
   font-size: max(1.25vw, 18px);
   color: #000;

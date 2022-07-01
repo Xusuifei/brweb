@@ -138,13 +138,6 @@ export default {
   border-left: 1px solid rgba(255,255,255,0.1);
   border-right: 1px solid rgba(255,255,255,0.1);;
 }
-.abtcl-p2-iframe-box li:hover p{
-  display:contents;
-  white-space: pre-wrap;
-  font-size: max(1.04vw, 15px);
-  color: #FFFFFF;
-  line-height: 1.5;
-}
 .abtcl-p2-pop-up{
   height: 87.3vh;
   display: table-cell;
@@ -160,5 +153,12 @@ export default {
 }
 .abtcl-p2-pop-up p{
   display: none;
+  white-space: pre-wrap;
+  font-size: max(1.04vw, 15px);
+  color: #FFFFFF;
+  line-height: 1.5;
+}
+.abtcl-p2-iframe-box li:hover p{
+  display: block;
 }
 </style>

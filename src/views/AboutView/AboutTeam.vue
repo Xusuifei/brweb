@@ -27,11 +27,8 @@
         <AppNavigator :invert="false"></AppNavigator>
           <div class="abttm-p3-text-box"> 
             <h1>
-                <span>17万吨再生基础油一期项目<br>点火仪式</span>
+                <span>为世界根除废油污染</span>
             </h1>
-            <p>
-                2019.12.16 湘阴县工业园
-            </p>
         </div>
         <Copyright />
       </div>  
@@ -79,7 +76,7 @@ export default {
   padding-top: 21vh;
   width: 30vw;
   height: 30vh;
-  color: #fff;
+  color: #000;
 }
 .abttm-p1-text-box h1 {
     font-size: max(3.65vw, 52px);;

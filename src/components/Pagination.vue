@@ -157,4 +157,8 @@ export default {
 .active {
   color: #111111;
 }
+
+button {
+  background-color: transparent;
+}
 </style>

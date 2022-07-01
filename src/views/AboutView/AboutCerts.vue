@@ -19,20 +19,22 @@
         <AppNavigator :invert="true"></AppNavigator>
         <div class="abtct-p2-iframe-box"> 
           <div class="abtct-p2-text-box">
-            <div class="abtct-p2-btn">
-              <div>
-                <span :class="radio1 == p2data[0].title? 'active-button' : 'inactive-button'" @mouseover="over(p2data[0].title)">荣誉</span>
-                <span :class="radio1 == p2data[1].title? 'active-button' : 'inactive-button'" @mouseover="over(p2data[1].title)">资质</span>
-              </div>
-              <div v-for="item in p2data" v-bind:key="item.title"
-              >
-                <ul v-show="item.title == radio1">
-                  <li 
-                    v-for="itemli in item.lists" 
-                    v-bind:key="itemli.name" 
-                    @mouseover="showImage(itemli.fullimage)">{{itemli.name}} {{i}}
-                  </li>
-                </ul>
+            <div style="margin-top: calc(min(88vh, 50vw) * 0.345 - 15vh );">
+              <div class="abtct-p2-btn">
+                <div>
+                  <span :class="radio1 == p2data[0].title? 'active-button' : 'inactive-button'" @mouseover="over(p2data[0].title)">资质</span>
+                  <span :class="radio1 == p2data[1].title? 'active-button' : 'inactive-button'" @mouseover="over(p2data[1].title)">荣誉</span>
+                </div>
+                <div v-for="item in p2data" v-bind:key="item.title"
+                >
+                  <ul v-show="item.title == radio1">
+                    <li 
+                      v-for="itemli in item.lists" 
+                      v-bind:key="itemli.name" 
+                      @mouseover="showImage(itemli.fullimage)">{{itemli.name}} {{i}}
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>   
           </div>
@@ -72,12 +74,12 @@ export default {
             fullimage: require("@/assets/img/hazzardgoodscerts.jpg"),
           },
           {
-            name: "资源综合利用认定证书",
-            fullimage: require("@/assets/img/recyclecerts.jpg"),
-          },
-          {
             name:  "危险废物经营许可证(1)",
             fullimage: require("@/assets/img/hazzardwastescerts.jpg"),
+          },
+          {
+            name: "资源综合利用认定证书",
+            fullimage: require("@/assets/img/recyclecerts.jpg"),
           },
           {
             name: "排污许可证",
@@ -145,15 +147,13 @@ export default {
   left: 18vw;
 }
 .abtct-p2-text-box {
-  display: inline-block;
+  display: table-cell;
   width: 28vw;
-  height: 50vh;
   vertical-align: top;
-  margin-top: 10vh;
 }
 .abtct-p2-image-box {
-  display: inline-block; 
-  width: 88vh;
+  display: table-cell; 
+  width: min(88vh, 50vw);
 }
 .abtct-p2-btn {
   height: 5vh;
@@ -161,10 +161,11 @@ export default {
   color: #F9BE00;
   line-height: 5vh;
   display: inline-block;
+  font-size: max(1.25vw, 18px);
 }
 .abtct-p2-btn span{
     padding: 1vh 2vw;
-    font-size: 1.5vw;
+    font-size: min(1.5vw,2.7vh);
     letter-spacing: 0.5vw;
     border: 1px solid #f9BE00;
 }

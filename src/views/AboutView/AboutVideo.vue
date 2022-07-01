@@ -6,7 +6,7 @@
       <div fluid class="section screennobg">
         <AppNavigator :invert="false"></AppNavigator>
         <div class="video-wrap">
-          <video id="homeVideo1" class="home-video" autoplay loop controls="true">
+          <video class="home-video" autoplay loop controls="true">
               <source :src="movie1_src" type="video/mp4">
                           您的浏览器不支持视频标签
           </video>
@@ -16,7 +16,7 @@
       <div fluid class="section screennobg">
         <AppNavigator :invert="false"></AppNavigator>
         <div class="video-wrap">
-          <video class="home-video" autoplay loop controls="true">
+          <video class="home-video" loop controls="true">
               <source :src="movie2_src" type="video/mp4">
               您的浏览器不支持视频标签
           </video>
@@ -27,7 +27,7 @@
       <div fluid class="section screennobg">
         <AppNavigator :invert="false"></AppNavigator>
         <div class="video-wrap">
-          <video class="home-video" autoplay loop controls="true">
+          <video class="home-video" loop controls="true">
               <source :src="movie3_src" type="video/mp4">
               您的浏览器不支持视频标签
           </video>

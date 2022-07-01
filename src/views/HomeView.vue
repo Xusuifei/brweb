@@ -69,7 +69,7 @@
                   @mouseover="showfull($event,i)"
                   @mouseout="hiddenfull()"
                 >
-                <router-link to="/about" style="text-deco ">
+                <router-link to="/about" style="color: white;">
                   <div class="p3-text-top-padding" v-show="showDetail != i"></div>
                   <div class="p3-text-text-cell">
                       <h1><span>{{item.brief}}</span></h1>
@@ -398,7 +398,8 @@ export default {
 }
 .homep4bg.load-bg {
   background: linear-gradient(to top, #fff 16%, rgba(255,255,255,0.0) 16%), url('@/assets/img/0-4.jpg');
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: block;
 }
 .home-p4-text-box1 {

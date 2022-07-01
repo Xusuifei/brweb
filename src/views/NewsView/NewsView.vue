@@ -136,12 +136,8 @@ methods: {
     font-size: max(1.88vw, 27px);
     color: #000;
 }
- .produc-p2-iframe-box {
-   display: block;
-   position: relative;
-   padding-top:11.85vh;
-   height: 88.15vh;
-   width: 100vw;
+ .iframe-box h1{
+     font-size: max(3.65vw, 52px); 
  }
  .abths-table-container {
     display: block;

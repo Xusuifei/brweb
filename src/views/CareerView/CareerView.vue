@@ -7,7 +7,7 @@
         <AppNavigator :invert="true"></AppNavigator>
           <div class="jobov-p1-text-box"> 
             <h1>
-                人才理念
+                加入我们
             </h1>
             <h2>
                 欢迎加入远大资源
